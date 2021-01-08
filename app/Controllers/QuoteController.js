@@ -22,7 +22,9 @@ export default class QuoteController {
     ProxyState.on("quote", _drawQuote)
     this.getQuote()
     _drawClock()
-    
+    setInterval(() => {
+      _drawClock()
+    }, 30000);
   }
   getQuote(){
     try {
