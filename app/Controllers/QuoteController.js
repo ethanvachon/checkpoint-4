@@ -13,7 +13,11 @@ function _drawClock(){
   let hours = time.getHours()
   let minutes = time.getMinutes()
   document.getElementById('hours').innerText = hours.toString()
-  document.getElementById('minutes').innerText = minutes.toString()
+  if(minutes < 10){
+    document.getElementById('minutes').innerText = `0${minutes}`
+  } else {
+    document.getElementById('minutes').innerText = minutes.toString()
+  }
 }
 
 

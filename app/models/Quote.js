@@ -6,7 +6,7 @@ export default class Quote {
 
   get Template(){
     return `
-      <div class="bg-light rounded quote-display">
+      <div class="bg-light rounded quote-display" id="quote-font">
                 <p>${this.body}</p>
                 <h6 class="d-none quote-author">-${this.author}</h6>
                 

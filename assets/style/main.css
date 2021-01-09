@@ -14,7 +14,6 @@
   width: 100%;
 }
 input{
-  width: 17vw;
   height: 4vh;
 }
 .btn{
@@ -33,7 +32,7 @@ input{
 .clock{
   position: fixed;
   top: 40vh;
-  left: 42vw;
+  left: 36vw;
 }
 @keyframes fade_in_show {
   0% {
@@ -44,6 +43,12 @@ input{
        opacity: 1;
        /* transform: scale(1) */
   }
+}
+#quote-font{
+  font-family: 'Bodoni Moda', serif;
+}
+#name{
+  width: 12vw;
 }
 
 
@@ -435,6 +440,8 @@ h6, .h6 {
   font-size: 6rem;
   font-weight: 300;
   line-height: 1.2;
+  text-align: center;
+  width: 28vw !important;
 }
 
 .display-2 {
@@ -2702,6 +2709,7 @@ fieldset:disabled a.btn {
 .btn-outline-primary {
   color: #3BA5DC;
   border-color: #3BA5DC;
+  margin-bottom: 0.5vh;
 }
 .btn-outline-primary:hover {
   color: white;
@@ -10740,6 +10748,7 @@ body {
 
 main {
   flex-grow: 1;
+  font-family: 'Roboto Mono', monospace;
 }
 
 /*# sourceMappingURL=main.css.map */

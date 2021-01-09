@@ -6,7 +6,7 @@ function _drawTodos() {
   let template = ''
   ProxyState.todos.forEach(i => template += i.Template)
   document.getElementById('todos').innerHTML = template
-  console.log(template)
+  document.getElementById('total-tasks').innerText = ProxyState.taskCount.toString()
 
  }
 

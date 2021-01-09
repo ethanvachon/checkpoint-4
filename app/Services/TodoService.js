@@ -10,25 +10,28 @@ class TodoService {
 
   async addTodo(todo) {
     let res = await api.post('ethan/todos/', todo);
+    ProxyState.taskCount++
     ProxyState.todos = [...ProxyState.todos, new Todo(res.data)]
   }
 
   async toggleTodoStatus(todoId) {
     let todo = ProxyState.todos.find(todo => todo.id == todoId);
+    // @ts-ignore
+    if(document.getElementById(todo.id).checked == true){
+
+    }
     todo.completed = true
-    console.log(ProxyState.todos) 
+    await api.put('ethan/todos/' + todoId, todo);
     //TODO Make sure that you found a todo,
     //		and if you did find one
     //		change its completed status to whatever it is not (ex: false => true or true => false)
 
-    let res = await api.put('ethan/todos' + todoId, todo);
     //TODO how do you trigger this change
   }
 
   async removeTodo(todoId) {
-    console.log(ProxyState.todos)
-    console.log(todoId)
     await api.delete('ethan/todos/'+todoId)
+    ProxyState.taskCount--
     ProxyState.todos = ProxyState.todos.filter(i => i.id !== todoId)
     //TODO Work through this one on your own
     //		what is the request type

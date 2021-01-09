@@ -7,10 +7,12 @@ export default class Todo {
   }
   get Template(){
     return `
-    
-    <li class="d-flex justify-content-between">${this.description}
-    <i class="fas fa-trash text-danger pr-2" onclick="app.todoController.removeTodo('${this.id}')"></i>
-    </li>
+
+    <form class="d-flex justify-content-between align-items-center pb-2">
+      <input id="${this.id}" type="checkbox" onclick="app.todoController.toggleTodoStatus('${this.id}')">
+      <label for="${this.id}">${this.description}</label>
+      <i class="fas fa-trash text-danger pr-2" onclick="app.todoController.removeTodo('${this.id}')"></i>
+    </form>
     `
   }
 }

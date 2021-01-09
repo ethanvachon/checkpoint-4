@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/style/main.css">
     <title>Inspire</title>
@@ -21,13 +25,16 @@
             <div class=" offset-7 col-3 mt-5">
                 <div class="card text-left">
                   <div class="card-body">
-                    <h4 class="card-title text-center border-bottom pb-1">To Do List</h4>
+                      <div class="border-bottom">
+                        <h4 class="card-title text-center">To Do List</h4>
+                        <p class="text-center"><span id="tasks-completed">0</span>/<span id="total-tasks">0</span></p>
+                      </div>
                     <div id="todos">
-                        
+                       
                     </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <form onsubmit="app.todoController.addTodo()" >
-                            <input id="name" type="text" placeholder="Add Task" required>
+                    <div>
+                        <form onsubmit="app.todoController.addTodo()"class="d-flex justify-content-center">
+                            <input id="name" type="text" placeholder="Add Task" required maxlength="20">
                             <button class="btn btn-outline-primary" type="submit">+</button>
                         </form>
                     </div>
@@ -39,7 +46,7 @@
         </div>
 
         <div class="row clock">
-            <div class="col-4 offset-4 d-flex justify-content-center rounded">
+            <div class="d-flex justify-content-center rounded">
                 <h1 class="display-1 bg-light p-3 rounded"><span id="hours">00</span>:<span id="minutes">00</span></h1>
             </div>
 
@@ -48,7 +55,7 @@
 
 
          <div class="row quote-row">
-            <div class="mt-5 offset-3 col-6 d-flex justify-content-center" id="quote">
+            <div class="mt-5 offset-3 offset-6 col-6 d-flex justify-content-center" id="quote">
 
 
             </div>

@@ -13,6 +13,9 @@ class AppState extends EventEmitter {
   image = ''
 
   quote = null
+
+  taskCount = 0
+  tasksCompleted = 0
 }
 
 export const ProxyState = new Proxy(new AppState(), {
