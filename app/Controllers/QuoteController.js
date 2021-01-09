@@ -12,6 +12,9 @@ function _drawClock(){
   let time = new Date()
   let hours = time.getHours()
   let minutes = time.getMinutes()
+  document.getElementById('year').innerHTML = time.getFullYear().toString()
+  document.getElementById('month').innerHTML = time.getMonth().toString()
+  document.getElementById('day').innerHTML = time.getDate().toString()
   document.getElementById('hours').innerText = hours.toString()
   if(minutes < 10){
     document.getElementById('minutes').innerText = `0${minutes}`
@@ -28,7 +31,7 @@ export default class QuoteController {
     _drawClock()
     setInterval(() => {
       _drawClock()
-    }, 30000);
+    }, 5000);
   }
   getQuote(){
     try {
