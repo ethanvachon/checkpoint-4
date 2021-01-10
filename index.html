@@ -23,7 +23,7 @@
 
             </div>
             <div class=" offset-7 col-3 mt-5">
-                <div class="card text-left">
+                <div class="card text-left" id="task-list">
                   <div class="card-body">
                       <div class="border-bottom">
                         <h4 class="card-title text-center">To Do List</h4>
@@ -34,7 +34,7 @@
                     </div>
                     <div>
                         <form onsubmit="app.todoController.addTodo()"class="d-flex justify-content-center">
-                            <input id="name" type="text" placeholder="Add Task" required maxlength="20">
+                            <input id="desc" type="text" placeholder="Add Task" required maxlength="20">
                             <button class="btn btn-outline-primary" type="submit">+</button>
                         </form>
                     </div>
@@ -46,7 +46,7 @@
         </div>
 
         <div class="row clock">
-            <div class="d-flex justify-content-center align-items-center flex-column rounded clock-body bg-light">
+            <div class="d-flex justify-content-center align-items-center flex-column rounded clock-body bg-light" id="main-clock">
                 <h4 class="pt-2"><span id="name-time"></span> <span id="name-text"></span></h4>
                 <h1 class="display-1 rounded"><span id="hours">00</span>:<span id="minutes">00</span></h1>
                 <h5><span id="month"></span> - <span id="day"></span> - <span id="year"></span></h5>
@@ -67,7 +67,7 @@
         </div>
         <div class="row">
             <div class="col-3">
-                  <div class="card-body settings d-flex flex-column bg-light align-items-center justify-content-around rounded">
+                  <div class="card-body settings d-flex flex-column bg-light align-items-center justify-content-around rounded" id="main-settings">
                       <div class="d-flex justify-content-around">
                         <p class="my-0 pr-1 align-self-center">Dark Mode</p><input type="checkbox" id="dark-mode" onclick="app.imageController.toggleMode()">
                       </div>

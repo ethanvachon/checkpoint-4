@@ -17,7 +17,7 @@ export default class Weather {
   get Template(){
     return `
     
-                <div class="card text-left">
+                <div class="card text-left" id="main-weather">
                   <div class="card-body">
                     <h5 class="card-title">${this.city}</h5>
                     <h5 onclick="app.weatherController.changeTemp()"><span id="temp">${this.far}</span>°<span id="temp-unit">F</span></h5>

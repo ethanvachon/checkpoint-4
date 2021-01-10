@@ -26,7 +26,17 @@ getImage(){
 toggleMode(){
   // @ts-ignore
   if(document.getElementById('dark-mode').checked == true){
-
+    document.getElementById('quote-font').classList.add('bg-dark', 'text-light')
+    document.getElementById('main-clock').classList.add('bg-dark', 'text-light')
+    document.getElementById('main-weather').classList.add('bg-dark', 'text-light')
+    document.getElementById('main-settings').classList.add('bg-dark', 'text-light')
+    document.getElementById('task-list').classList.add('bg-dark', 'text-light')
+  } else {
+    document.getElementById('quote-font').classList.remove('bg-dark', 'text-light')
+    document.getElementById('main-clock').classList.remove('bg-dark', 'text-light')
+    document.getElementById('main-weather').classList.remove('bg-dark', 'text-light')
+    document.getElementById('main-settings').classList.remove('bg-dark', 'text-light')
+    document.getElementById('task-list').classList.remove('bg-dark', 'text-light')
   }
 }
 

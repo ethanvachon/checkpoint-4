@@ -50,7 +50,7 @@ export default class TodoController {
     let form = window.event.target
     //TODO build the todo object from the data that comes into this method
     let todo = {
-      description: form['name'].value,
+      description: form['desc'].value,
       user: 'me',
     };
     // @ts-ignore
