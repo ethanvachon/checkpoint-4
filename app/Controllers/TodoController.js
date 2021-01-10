@@ -1,28 +1,46 @@
 import { ProxyState } from "../AppState.js";
 import todoService from "../Services/TodoService.js";
+import {saveTodo} from "../Utils/LocalStorage.js"
 
 //TODO Create the draw function
 function _drawTodos() {
   let template = ''
   ProxyState.todos.forEach(i => template += i.Template)
   document.getElementById('todos').innerHTML = template
-  document.getElementById('total-tasks').innerText = ProxyState.taskCount.toString()
+  // @ts-ignore
+  document.getElementById('total-tasks').innerText = ProxyState.taskCount
+  ProxyState.todos.forEach(t => {
+    if(t.completed == true){
+      // @ts-ignore
+      document.getElementById(t.id).checked = true
+    }
+  })
+  // @ts-ignore
+  
  }
  function _drawCompleted(){
-  document.getElementById('tasks-completed').innerText = ProxyState.tasksCompleted.toString()
+  // @ts-ignore
+  document.getElementById('tasks-completed').innerText = ProxyState.tasksCompleted
  }
+ 
 
 export default class TodoController {
   constructor() {
+    this.getTodos();
     //TODO Remember to register your subscribers
     ProxyState.on('todos', _drawTodos)
+    ProxyState.on('tasksCompleted', saveTodo)
+    ProxyState.on('taskCount', saveTodo)
     ProxyState.on('tasksCompleted', _drawCompleted)
-    todoService.getTodos();
+    ProxyState.on('taskCount', _drawTodos)
+    
+    
   }
 
   getTodos() {
     try {
       todoService.getTodos()
+      console.log('asd')
     } catch (error) {
       console.error(error)
     }

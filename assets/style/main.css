@@ -5,6 +5,9 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ .brightness{
+   filter: brightness(50%);
+ }
 #background-image{
   background-size: cover;
 }

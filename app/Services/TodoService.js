@@ -1,11 +1,14 @@
 import { ProxyState } from "../AppState.js";
 import { api } from "../Services/AxiosService.js";
 import Todo from "../models/Todo.js"
+import { loadTodo } from "../Utils/LocalStorage.js";
 
 class TodoService {
   async getTodos() {
     let res = await api.get('ethan/todos/');
+    console.log(res)
     ProxyState.todos = res.data.map(t => new Todo(t))
+    loadTodo()
   }
 
   async addTodo(todo) {
@@ -24,7 +27,6 @@ class TodoService {
       todo.completed = false
       ProxyState.tasksCompleted--
     }
-    console.log(ProxyState.tasksCompleted, todo.completed)
     await api.put('ethan/todos/' + todoId, todo);
     //TODO Make sure that you found a todo,
     //		and if you did find one
@@ -35,8 +37,13 @@ class TodoService {
 
   async removeTodo(todoId) {
     await api.delete('ethan/todos/'+todoId)
-    ProxyState.taskCount--
+   
+    if(ProxyState.todos.find(i => i.id == todoId).completed == true){
+      ProxyState.tasksCompleted--
+    }
     ProxyState.todos = ProxyState.todos.filter(i => i.id !== todoId)
+    ProxyState.taskCount--
+    console.log(ProxyState.tasksCompleted, ProxyState.taskCount)
     //TODO Work through this one on your own
     //		what is the request type
     //		once the response comes back, how do you update the state
