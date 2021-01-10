@@ -7,13 +7,16 @@ function _drawTodos() {
   ProxyState.todos.forEach(i => template += i.Template)
   document.getElementById('todos').innerHTML = template
   document.getElementById('total-tasks').innerText = ProxyState.taskCount.toString()
-
+ }
+ function _drawCompleted(){
+  document.getElementById('tasks-completed').innerText = ProxyState.tasksCompleted.toString()
  }
 
 export default class TodoController {
   constructor() {
     //TODO Remember to register your subscribers
     ProxyState.on('todos', _drawTodos)
+    ProxyState.on('tasksCompleted', _drawCompleted)
     todoService.getTodos();
   }
 

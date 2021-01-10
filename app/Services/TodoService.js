@@ -18,9 +18,13 @@ class TodoService {
     let todo = ProxyState.todos.find(todo => todo.id == todoId);
     // @ts-ignore
     if(document.getElementById(todo.id).checked == true){
-
+      todo.completed = true
+      ProxyState.tasksCompleted++
+    } else{
+      todo.completed = false
+      ProxyState.tasksCompleted--
     }
-    todo.completed = true
+    console.log(ProxyState.tasksCompleted, todo.completed)
     await api.put('ethan/todos/' + todoId, todo);
     //TODO Make sure that you found a todo,
     //		and if you did find one
