@@ -16,6 +16,14 @@
   bottom: 0;
   width: 100%;
 }
+.nameinput{
+  position: fixed;
+  top: 20vh;
+  left: 41vw;
+}
+.namebody{
+  filter: brightness(100%) !important;
+}
 input{
   height: 4vh;
 }
@@ -57,7 +65,14 @@ input{
 #name{
   width: 12vw;
 }
-
+.d-hidden{
+  display: none;
+}
+.settings{
+  position: fixed;
+  bottom: 0px;
+  font-size: 1vh;
+}
 
 
 

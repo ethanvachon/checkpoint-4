@@ -23,6 +23,12 @@ getImage(){
     console.error(error)
   }
 }
+toggleMode(){
+  // @ts-ignore
+  if(document.getElementById('dark-mode').checked == true){
+
+  }
+}
 
 
  }
