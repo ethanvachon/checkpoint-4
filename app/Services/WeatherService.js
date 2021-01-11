@@ -6,8 +6,6 @@ class WeatherService {
   async getWeather() {
     let res = await api.get('weather');
     ProxyState.weather = new Weather(res.data);
-    console.log(res.data)
-    console.log(ProxyState.weather)
   }
 }
 

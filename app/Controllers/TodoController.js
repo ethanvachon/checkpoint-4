@@ -40,7 +40,6 @@ export default class TodoController {
   getTodos() {
     try {
       todoService.getTodos()
-      console.log('asd')
     } catch (error) {
       console.error(error)
     }

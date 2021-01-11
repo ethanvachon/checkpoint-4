@@ -6,7 +6,6 @@ import { loadTodo } from "../Utils/LocalStorage.js";
 class TodoService {
   async getTodos() {
     let res = await api.get('ethan/todos/');
-    console.log(res)
     ProxyState.todos = res.data.map(t => new Todo(t))
     loadTodo()
   }
@@ -43,7 +42,6 @@ class TodoService {
     }
     ProxyState.todos = ProxyState.todos.filter(i => i.id !== todoId)
     ProxyState.taskCount--
-    console.log(ProxyState.tasksCompleted, ProxyState.taskCount)
     //TODO Work through this one on your own
     //		what is the request type
     //		once the response comes back, how do you update the state
